@@ -1,151 +1,80 @@
-
 import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { faApple, faFacebook, faTwitter, faInstagram, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import GoogleLogo from '../../assets/Tech Logos/Google.jpg';
-import PhHeartbeat from '../../assets/ph_heartbeat-duotone.png';
-import Frame86 from '../../assets/Frame 86.png';
-import { Link, useNavigate } from 'react-router-dom';
-
-
+import { FaApple } from 'react-icons/fa';
+import GoogleLogo from '../../assets/androidDownload.png';
 
 const Signup = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-  const [isPatient, setIsPatient] = useState(true);
-  const [isPractitioner, setIsPractitioner] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
+    role: '',
+    fullname: '',
     email: '',
     password: '',
     confirmPassword: '',
-    isPractitioner: false,
-    isPatient: true,
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form validation logic here if needed
-
-    // Redirect to OTP page upon successful sign-up
-    navigate('/OTP');
+    if (formData.password !== formData.confirmPassword) {
+      setErrorMessage('Passwords do not match!');
+      return;
+    }
+    setErrorMessage(''); // Reset error message
+    navigate('/OTP'); // Redirect to OTP page
   };
 
   return (
-    <div className="min-h-screen bg-[#FFFFFF] flex flex-col justify-center items-center py-14 px-4 sm:px-6 lg:px-8">
-
-     
-      <div className="flex w-full justify-start mb-8 pl-8 mt-[-14px]">
-      <Link to="/" className='flex justify-between items-center'>
-        <img src={PhHeartbeat} alt="E-MEDATT Logo" className="w-[35px] h-[35px] mt-[-0.2rem]" />
-        <h1 className="font-inter text-2xl font-bold leading-8 text-[#3b54fa] mr-[rem]">E-MEDATT</h1>
-        </Link>
-       
-      </div>
-
-    
-    
-      <div className="max-w-7xl w-full mx-auto flex flex-col md:flex-row justify-center items-center rounded-lg  overflow-hidden bg-white">
-        <div className="hidden md:flex justify-center items-start w-full md:w-1/2">
-          <img
-            src={Frame86}
-            alt="Sign Up"
-            className="w-full object-cover rounded-lg h-full"
-            style={{ maxHeight: '650px', objectFit: 'cover' }}
-          />
-        </div>
-
-        <div className="w-full md:w-1/2 p-8">
-          <h2 className="text-3xl font-inter font-semibold text-center text-[#000000]">Sign up</h2>
-          <p className="mt-2 text-center font-medium font-inter leading-5 text-[#000000]"> Already have an account? <Link to="/Login" className="text-blue-500 font-inter">Login</Link></p>
-          <div className="mt-6">
-            <p className="text-center font-inter text-lg font-medium text-[#000000]"> You are a (Please tick the appropriate box)</p>
-            <div className="space-x-8 flex mt-4 justify-between">
-              <label
-                className={`flex items-center w-full md:w-1/2 px-3 py-2 border border-gray-300 rounded-md cursor-pointer ${isPractitioner ? 'bg-gray-100 text-black' : ''
-                  } ${isPatient ? 'cursor-not-allowed opacity-50' : ''}`}
+    <div className='w-full overflow-scroll'>
+      <div className="flex justify-center items-center">
+        <div className="w-[424px] p-6">
+          <h2 className="text-2xl font-inter font-bold text-center text-[#323232]">
+            Create Your Account!
+          </h2>
+          <p className="text-center font-normal text-[#969696] text-[16px]">
+            Sign up to access personalized healthcare.
+          </p>
+          <form onSubmit={handleSubmit}>
+            <fieldset className="mb-4">
+              <legend className="font-inter block text-sm font-medium text-[#2D2D2D]">Role</legend>
+              <select
+                name="role"
+                id="role"
+                value={formData.role}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               >
-                <input
-                  type="radio"
-                  className="w-3 h-4 text-blue-600 bg-[#AEAEAE] border-gray-300 rounded-full focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2"
-                  checked={isPractitioner}
-                  onChange={() => {
-                    setIsPractitioner(true);
-                    setIsPatient(false);
-                  }}
-                />
-                <span className="ml-2 text-[16px]">
-                 Practitioner
-                </span>
-              </label>
-              <label
-                className={`flex items-center w-full md:w-1/2 px-3 py-2 border border-gray-300 rounded-md cursor-pointer ${!isPatient ? 'bg-gray-100 text-black' : ''
-                  } ${isPractitioner ? 'cursor-not-allowed opacity-50' : ''}`}
-              >
-                <input
-                  type="radio"
-                  className="w-3 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2"
-                  checked={isPatient}
-                  onChange={() => {
-                    setIsPatient(true);
-                    setIsPractitioner(false);
-                  }}
-                />
-                <span className="ml-2 text-[16px]">
-                 Patient
-                </span>
-              </label>
+                <option className='text-gray-400' disabled>Choose your role</option>
+                <option value="physician">Physician</option>
+                <option value="patient">Patient</option>
+              </select>
+            </fieldset>
+            <div className="mb-4">
+              <label htmlFor="fullname" className="font-inter block text-sm font-medium text-[#2D2D2D]">Full Name</label>
+              <input
+                id="fullname"
+                name="fullname"
+                type="text"
+                required
+                value={formData.fullname}
+                onChange={handleChange}
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+              />
             </div>
-          </div>
-
-          <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
-            <div className="flex gap-4">
-              <div className="w-1/2">
-                <label htmlFor="firstName" className="font-inter block text-sm font-medium text-[#2D2D2D]"> First Name</label>
-                <input
-                  id="firstName"
-                  name="firstName"
-                  type="text"
-                  required
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-              <div className="w-1/2">
-                <label htmlFor="lastName" className="font-inter block text-sm font-medium text-[#2D2D2D]">Last Name </label>
-                <input
-                  id="lastName"
-                  name="lastName"
-                  type="text"
-                  required
-                  value={formData.lastName}
-                  onChange={handleChange}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="email" className="font-inter block text-sm font-medium text-[#2D2D2D]">Email </label>
+            <div className="mb-4">
+              <label htmlFor="email" className="font-inter block text-sm font-medium text-[#2D2D2D]">Email</label>
               <input
                 id="email"
                 name="email"
@@ -156,10 +85,8 @@ const Signup = () => {
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
-            <div className="relative">
-              <label htmlFor="password" className="font-inter block text-sm font-medium text-[#2D2D2D]">
-                Password
-              </label>
+            <div className="relative mb-4">
+              <label htmlFor="password" className="font-inter block text-sm font-medium text-[#2D2D2D]">Password</label>
               <input
                 id="password"
                 name="password"
@@ -175,10 +102,8 @@ const Signup = () => {
                 onClick={togglePasswordVisibility}
               />
             </div>
-            <div className="relative">
-              <label htmlFor="confirmPassword" className="font-inter block text-sm font-medium text-[#2D2D2D]">
-                Confirm Password
-              </label>
+            <div className="relative mb-4">
+              <label htmlFor="confirmPassword" className="font-inter block text-sm font-medium text-[#2D2D2D]">Confirm Password</label>
               <input
                 id="confirmPassword"
                 name="confirmPassword"
@@ -194,90 +119,224 @@ const Signup = () => {
                 onClick={toggleConfirmPasswordVisibility}
               />
             </div>
+            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
             <button
               type="submit"
-              className="w-full bg-[#3B54FA] text-white py-2 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full mt-2 bg-[#3B54FA] text-white py-2 rounded-md shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Sign Up
             </button>
+
             <div className="flex items-center justify-center my-4">
-              <hr className="w-full border-gray-300" />
-              <span className="mx-4 text-gray-500">OR</span>
-              <hr className="w-full border-gray-300" />
+              <hr className="flex-1 border-gray-300" />
+              <span className="mx-4 text-gray-500 whitespace-nowrap">or do it via other accounts</span>
+              <hr className="flex-1 border-gray-300" />
             </div>
-            <button
-              type="button"
-              className="w-full flex items-center justify-center bg-white border border-gray-300 py-2 rounded-md  hover:bg-gray-50 mt-4"
-            >
-              <img src={GoogleLogo} alt="Google Logo" className="w-8 h-8 mr-2" />
-              Sign up with Google
-            </button>
-            <button
-              type="button"
-              className="w-full flex items-center justify-center bg-white border border-gray-300 py-2 rounded-md  hover:bg-gray-50 mt-4"
-            >
-              <FontAwesomeIcon icon={faApple} className="text-gray-600 mr-2 w-8 h-8" /> Sign up with Apple
-            </button>
+
+            <div className='flex justify-center gap-4 mb-4'>
+              <button className='w-10 h-10 flex items-center justify-center rounded-full bg-white border-2'>
+                <img className='w-6' src={GoogleLogo} alt="Google logo" />
+              </button>
+              <button className='w-10 h-10 flex items-center justify-center rounded-full bg-white border-2'>
+                <FaApple className='text-xl' />
+              </button>
+            </div>
+
+            <div className='flex justify-center'>
+              <p className='font-normal text-base text-[#4e4e4e]'>
+                Already have an account? <Link to="/auth/signin" className="text-blue-500">Login</Link>
+              </p>
+            </div>
           </form>
         </div>
       </div>
-      <footer className="w-[1200px] h-[19px] gap-[384px] lg:flex justify-center items-center text-center text-gray-500 mt-10">
-        <div className="w-[159px] h-[19px]">
-          <p className="font-Inter text-[#141522] text-xs leading-[14.52px] tracking-[-1%] text-nowrap">
-            Copyright © Emedatt 2024
-          </p>
-        </div>
+    </div>
+  );
+};
 
-        <div className="flex item-center w-[155px] h-[19px] gap-[18px]">
-          <a
-            className="font-normal text-[16.85px] leading-[19.38px] text-[#222222]"
-            href="https://facebook.com/example"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faFacebook} />
-          </a>
-          <a
-            className="font-normal text-[16.85px] leading-[19.38px] text-[#222222]"
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {' '}
-            <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faTwitter} />
-          </a>
-          <a
-            className="font-normal text-[16.85px] leading-[19.38px] text-[#222222]"
-            href="https://instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faInstagram} />
-          </a>
-          <a
-            className="font-normal text-[16.85px] leading-[19.38px] text-[#222222]"
-            href="https://youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faYoutube} />
-          </a>
-          <a
-            className="font-normal text-[16.85px] leading-[19.38px] text-[#222222]"
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faLinkedin} />
-          </a>
+const OTPVerification = () => {
+  const [otp, setOtp] = useState(Array(6).fill(''));
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleChange = (value, index) => {
+    const newOtp = [...otp];
+    newOtp[index] = value;
+    setOtp(newOtp);
+    if (value && index < otp.length - 1) {
+      document.getElementById(`otp-${index + 1}`).focus();
+    }
+  };
+
+  const handleKeyDown = (e, index) => {
+    if (e.key === 'Backspace' && !otp[index] && index > 0) {
+      document.getElementById(`otp-${index - 1}`).focus();
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // Add verification logic here
+    // On success:
+    // navigate('/additional-info');
+    // On failure:
+    // setError('Invalid OTP');
+    setLoading(false);
+  };
+
+  return (
+    <div className="flex flex-col justify-center items-center p-8">
+      <h1>Verify Email</h1>
+      <p>A 6-digit code was sent to your email. Check your email and enter the verification code.</p>
+      <form className="mt-[5rem] w-full space-y-4" onSubmit={handleSubmit}>
+        <div className="flex justify-center space-x-2 mt-3">
+          {otp.map((data, index) => (
+            <input
+              key={index}
+              id={`otp-${index}`}
+              type="text"
+              maxLength="1"
+              value={data}
+              onChange={(e) => handleChange(e.target.value, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              className="mt-1 block w-10 px-3 py-2 border border-[#F44949] rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-center text-lg"
+              onFocus={(e) => e.target.select()}
+            />
+          ))}
         </div>
-        <div className="w-[117px] h-[11px]">
-          <p className="tracking-[-1%] text-[#263238] font-normal text-[12px] leading-[14.52px]">
-            Terms and condition
-          </p>
+        <div className='flex justify-center'>
+          <button
+            type="submit"
+            className="mt-4 text-blue-500 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            {loading ? "Verifying..." : "Verify"}
+          </button>
         </div>
-      </footer>
+      </form>
+      {error && <p className="text-red-500 mt-2">{error}</p>}
+    </div>
+  );
+};
+
+const AdditionalInfo = () => {
+  const [formData, setFormData] = useState({
+    gender: '',
+    dateOfBirth: '',
+    healthConditions: [],
+    additionalInfo: '',
+    specialization: '',
+    experience: '',
+    professionalBio: '',
+    idFile: null,
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, idFile: e.target.files[0] });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle the submission of additional info
+  };
+
+  return (
+    <div className='p-8'>
+      <h1>You Are Almost There!</h1>
+      <p>Complete your profile to finish setting up your account</p>
+      <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <label htmlFor="gender">Gender</label>
+          <select name="gender" id="gender" value={formData.gender} onChange={handleChange} className="mt-1 block w-full">
+            <option value="">Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="dateOfBirth">Date of Birth</label>
+          <input
+            type="date"
+            name="dateOfBirth"
+            id="dateOfBirth"
+            value={formData.dateOfBirth}
+            onChange={handleChange}
+            className="mt-1 block w-full"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="healthConditions">Health Conditions</label>
+          <select name="healthConditions" id="healthConditions" multiple value={formData.healthConditions} onChange={handleChange} className="mt-1 block w-full">
+            <option value="condition1">Condition 1</option>
+            <option value="condition2">Condition 2</option>
+            <option value="condition3">Condition 3</option>
+          </select>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="additionalInfo">Additional Health Information</label>
+          <textarea
+            name="additionalInfo"
+            id="additionalInfo"
+            value={formData.additionalInfo}
+            onChange={handleChange}
+            className="mt-1 block w-full"
+          ></textarea>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="specialization">Area of Specialization (if physician)</label>
+          <input
+            type="text"
+            name="specialization"
+            id="specialization"
+            value={formData.specialization}
+            onChange={handleChange}
+            className="mt-1 block w-full"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="experience">Years of Experience (if physician)</label>
+          <input
+            type="text"
+            name="experience"
+            id="experience"
+            value={formData.experience}
+            onChange={handleChange}
+            className="mt-1 block w-full"
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="professionalBio">Professional Bio (if physician)</label>
+          <textarea
+            name="professionalBio"
+            id="professionalBio"
+            value={formData.professionalBio}
+            onChange={handleChange}
+            className="mt-1 block w-full"
+          ></textarea>
+        </div>
+        <div className="mb-4">
+          <label htmlFor="idFile">Upload Valid ID</label>
+          <input
+            type="file"
+            name="idFile"
+            id="idFile"
+            onChange={handleFileChange}
+            className="mt-1 block w-full"
+          />
+        </div>
+        <button type="submit" className="mt-2 bg-[#3B54FA] text-white py-2 rounded-md">
+          Finish Up
+        </button>
+        <button type="button" className="mt-2 ml-2" onClick={() => navigate(-1)}>
+          Go Back
+        </button>
+      </form>
     </div>
   );
 };

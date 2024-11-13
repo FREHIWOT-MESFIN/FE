@@ -1,22 +1,19 @@
-import React from 'react';
-import FeatureImage from '../../assets/FeatureImage.png';
+import React from 'react'
+import whyus from '../../assets/whyus.png'
 import BulletV from '../../assets/BulletVector.png';
 import LinkArrow from "../../assets/LinkArrow.png";
 
-const Features = () => {
+function WhyUs() {
   return (
-  <section className='w-full h-full bg-white flex flex-col items-center'>
+<section className='w-full h-full bg-white flex flex-col items-center'>
     <div className='w-full lg:w-[1232px] h-auto gap-4 lg:gap-8 flex items-center mt-16 p-5'>
-      <div>
-        <img src={FeatureImage} alt="" className='w-[679px] h-[532px]'/>
-      </div>
       <div className='w-[462px] h-[407px] gap-[40px] text-center p-5'>
         <div className='text-left'>
           <h2 className='font-[Inter] font-bold text-[21px] lg:text-[36px] leading-[28px] lg:leading-[43.2px] text-[#323232]'>
-            Our Features
+            Why Choose Us?
           </h2>
           <p className='font-[Inter] font-medium text-[1rem] lg:text-base leading-[23.2px] text-[#969696]'>
-          Experience convenient and affordable healthcare at your fingertips. From easy scheduling to secure telehealth, our features make accessing quality care simple and efficient.
+          E-Medatt provides instant access to quality healthcare services and seasoned professionals across the medical fields. Our system is refined to keep your health in check while maintaining a high level of privacy.
           </p>
         </div>
         <ul className="list-none my-4 space-y-2">
@@ -52,10 +49,12 @@ const Features = () => {
           </button>
         </div>
       </div>
+      <div>
+        <img src={whyus} alt="" className='w-[679px] h-[532px]'/>
+      </div>
     </div>
   </section>
-  
   )
 }
 
-export default Features;
+export default WhyUs

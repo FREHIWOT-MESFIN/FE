@@ -1,23 +1,111 @@
 import React from 'react'
-import Frame114 from '../../assets/Frame 114.png';
+import foreveryone1 from '../../assets/foreveryone1.png';
+import foreveryone2 from '../../assets/foreveryone2.png';
+import foreveryone3 from '../../assets/foreveryone3.png';
+import foreveryone4 from '../../assets/foreveryone4.png';
+import foreveryone5 from '../../assets/foreveryone5.png';
+import foreveryone6 from '../../assets/foreveryone6.png';
 
 const Mission = () => {
   return (
-    <section className='w-full h-auto gap-[10px] bg-[#3b54fa] py-8'>
-    <div className='w-full max-w-[1312px] h-auto flex flex-col lg:flex-row lg:justify-between items-center mx-auto px-4 lg:px-0'>
-      <div className='w-full lg:w-[644px] h-auto lg:h-[144px] gap-[16px] mt-12 lg:mt-0'>
-        <h2 className='font-[Inter] font-bold lg:text-[48px] text-[21px] leading-[40px] md:leading-[48px] lg:leading-[56px] mb-4 text-[#ffffff]'>
-          Why E-MEDATT?
+    <section className='w-full h-auto gap-[10px] py-8'>
+    <div className='w-full max-w-[1312px] h-auto flex flex-col lg:justify-between items-center mx-auto px-4 lg:px-0'>
+      <div className='mb-8 w-[766px] flex flex-col justify-center items-center'>
+        <h2 className='font-[Inter] text-[36px] leading-[43.2px] text-[#000] text-4xl font-bold'>
+          Healthcare for <span className="font-[Inter] text-[#417BEB] text-[36px] font-bold leading-[43.2px]"> Everyone</span>,<span className="font-[Inter] text-[#417BEB] text-[36px] font-bold leading-[43.2px]"> Wherever</span> You Are
         </h2>
-        <p className='font-[Inter] font-medium text-sm md:text-base leading-5 md:leading-6 text-[#f6f6f6]'>
-          We provide instant access to quality healthcare services and seasoned
-          <br className='hidden md:inline' /> professionals across the medical fields around the world. Our system is refined
-          <br className='hidden md:inline' /> to keep your health in check while maintaining a high level of privacy.
+        <p className='font-[Inter] w-[460px] text-[16px] font-normal leading-[23.2px] text-[#969696]'>
+          E-MEDATT makes healthcare accessible for different groups, providing tailored care to meet your specific needs.
         </p>
       </div>
-  
-      <div className='mt-8 lg:mt-0 w-full lg:w-[644px]'>
-        <img className='w-full h-auto lg:w-[644px] lg:h-[400px]' src={Frame114} alt="A picture of a doctor and a patient" />
+
+
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+         
+          <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
+            <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#DBEFDC]">
+              <img src={foreveryone1} alt="" className='absolute bottom-[-1rem] left-[40%] shadow-[0px_1px_3px_0px_#0000001A]' />
+            </div>
+            <div className='mt-10'>
+              <h3 className='text-[#323232] mb-2 font-[Inter] text-[20px] font-bold leading-[24px] text-center'>
+              Chronic Disease Patients
+              </h3>
+              <p className='font-[Inter] text-base font-normal leading-[23.2px] text-center text-[#969696]'>
+              Manage your health with regular check-ups and support to ensure you stay on track with your treatment, because your well-being is our top priority.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
+            <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#D9E5FB]">
+              <img src={foreveryone2} alt="" className='absolute bottom-[-1rem] left-[40%] shadow-[0px_1px_3px_0px_#0000001A]' />
+            </div>
+            <div className='mt-10'>
+              <h3 className='text-[#323232] mb-2 font-[Inter] text-[20px] font-bold leading-[24px] text-center'>
+              Elderly
+              </h3>
+              <p className='font-[Inter] text-base font-normal leading-[23.2px] text-center text-[#969696]'>
+              Receive compassionate care right at home by using our user-friendly telehealth services, allowing you to rest easy knowing expert help is just a call away.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
+            <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#FFF3CD]">
+              <img src={foreveryone3} alt="" className='absolute bottom-[-1rem] left-[40%] shadow-[0px_1px_3px_0px_#0000001A]' />
+            </div>
+            <div className='mt-10'>
+              <h3 className='text-[#323232] mb-2 font-[Inter] text-[20px] font-bold leading-[24px] text-center'>
+              Working Professionals
+              </h3>
+              <p className='font-[Inter] text-base font-normal leading-[23.2px] text-center text-[#969696]'>
+               Schedule flexible appointments that fit into your busy life, allowing you to prioritize your health without hassle and stay on top of your well-being without missing a beat.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
+            <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#FFE2DF]">
+              <img src={foreveryone4} alt="" className='absolute bottom-[-1rem] left-[40%] shadow-[0px_1px_3px_0px_#0000001A]' />
+            </div>
+            <div className='mt-10'>
+              <h3 className='text-[#323232] mb-2 font-[Inter] text-[20px] font-bold leading-[24px] text-center'>
+              Mental Health Patients
+              </h3>
+              <p className='font-[Inter] text-base font-normal leading-[23.2px] text-center text-[#969696]'>
+               Access confidential counseling and support at your convenience, providing you with the tools to improve your mental well-being and first step towards a brighter tomorrow.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
+            <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#F4E0FF]">
+              <img src={foreveryone5} alt="" className='absolute bottom-[-1rem] left-[40%] shadow-[0px_1px_3px_0px_#0000001A]' />
+            </div>
+            <div className='mt-10'>
+              <h3 className='text-[#323232] mb-2 font-[Inter] text-[20px] font-bold leading-[24px] text-center'>
+              Young Adults
+              </h3>
+              <p className='font-[Inter] text-base font-normal leading-[23.2px] text-center text-[#969696]'>
+               You can access high-quality healthcare from the comfort of your home and connect with trusted doctors whenever you need them.
+              </p>
+            </div>
+          </div>
+
+          <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
+            <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#DBEFDC]">
+              <img src={foreveryone6} alt="" className='absolute bottom-[-1rem] left-[40%] shadow-[0px_1px_3px_0px_#0000001A]' />
+            </div>
+            <div className='mt-10'>
+              <h3 className='text-[#323232] mb-2 font-[Inter] text-[20px] font-bold leading-[24px] text-center'>
+               Parents
+              </h3>
+              <p className='font-[Inter] text-base font-normal leading-[23.2px] text-center text-[#969696]'>
+              Get instant access to pediatric care to ensure your child(ren) receive the best possible attention, as we’re here to support your family's health every step of the way.
+              </p>
+            </div>
+          </div>
+
       </div>
     </div>
   </section>

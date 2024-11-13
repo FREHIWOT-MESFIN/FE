@@ -1,49 +1,76 @@
 import React from 'react';
-import Frame107 from '../../assets/Frame 107.png';
-import { AiOutlineArrowRight } from 'react-icons/ai';
-import applePic from '../../assets/appleDownload 1.png';
-import googlePic from '../../assets/googleDownload 1.png';
+import HeroImg from '../../assets/HeroImg.png';
+import HomeVector from '../../assets/HomeVector.png';
 
 const Hero = () => {
   return (
-    <section
-    className="w-full h-[640px] bg-no-repeat bg-center bg-cover flex items-center justify-center"
-    style={{
-      backgroundImage: `linear-gradient(rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.6)), url(${Frame107})`,
-    }}
-  >
-    <div className="w-[90%] max-w-[657px] h-auto gap-[48px] flex flex-col items-center lg:mr-[45rem]">
-      <h1 className="font-[Inter] lg:text-[48px] text-[21px] text-[#ffffff] font-bold leading-tight md:leading-[70px] text-center lg:mr-[-0.9rem] sm:mr-0">
-        Quality Healthcare Services
+    <section className="w-full h-[100vh] flex flex-col md:flex-row items-center justify-center mt-[0.5625rem] gap-[4.25rem]">
+    {/* Main Content Section */}
+    <div className="w-full sm:w-[22.5625rem] md:w-[33.75rem] h-auto sm:h-[18.75rem] gap-[1.5rem] sm:gap-[1.5rem]">
+     {/* Heading */}
+      <h1 className="font-[Inter] lg:text-[3rem] md:text-[2rem] text-[1.3125rem] text-[#000] font-bold leading-[3.814rem] md:leading-[4.375rem] text-center lg:mr-[-0.9rem] sm:mr-0">
+        Your Path to
+        <span className="font-[Inter] text-[#417BEB] text-[3.5rem] font-bold leading-[3.814rem] mx-2">
+          Better Health
+        </span>
+        is Just One Click Away!
       </h1>
-      <h1 className="text-center font-[Inter] font-bold text-[#ffffff] text-[21px] whitespace-nowrap lg:whitespace-normal lg:text-[48px] md:leading-[70px] mt-[-2rem] lg:mr-14 sm:mr-0">
-      24/7 without limitations!
-     </h1>
-
-      <p className="whitespace-normal text-center font-bold lg:break-words font-[Inter] lg:font-bold lg:text-sm text-base leading-6 text-[#ffffff] lg:mt-[-1rem]">
-      Get instant access to Medical Professionals across diverse fields with the click of a button.
+  
+      {/* Paragraph */}
+      <p className="font-[Inter] text-[1rem] font-normal leading-[1.5rem] text-[#969696]">
+        Set aside the inconvenience of scheduling appointments! Get in touch with a doctor whenever it's convenient for you. Our network of skilled and qualified doctors can provide you with first-rate medical treatment.
       </p>
-
-
-<div className="flex justify-center lg:justify-start lg:mr-[24rem]">
-  <button className="flex items-center whitespace-nowrap bg-[#3b54fa]  lg:w-[242px] h-[40px] px-4 py-2 border-0 gap-2 rounded text-[#ffffff] font-[Inter] font-bold text-base leading-6">
-    Book an Appointment <AiOutlineArrowRight className='text-[#ffffff]' size={20} />
-  </button>
-</div>
-
-
-      <div className="flex justify-center items-center gap-4 mt-4 w-[200px] md:w-[433px] h-[40px] md:h-[80px] mx-auto lg:mr-[13rem]">
-        <a className='w-[70%] h-[60px] lg:w-full lg:h-full' href="https://play.google.com/store" target="_blank" rel="noopener noreferrer">
-          <img src={googlePic} alt="google"/>
-        </a>
-        <a className='w-[70%] h-[60px] lg:w-full lg:h-full' href="https://www.apple.com/app-store/" target="_blank" rel="noopener noreferrer">
-          <img src={applePic} alt="apple" />
-        </a>
+  
+      {/* Buttons */}
+      <div className="flex flex-col md:flex-row justify-center gap-[1rem]">
+        <button className="font-[Inter] text-[0.875rem] text-[#fff] font-semibold leading-[1.25rem] text-center bg-[#417BEB] shadow-[0px_1px_2px_0px_#0000001D] w-[10.1875rem] h-[2.75rem] px-[18px] py-[14px] gap-[8px] rounded-[16px]">
+          Book Appointment
+        </button>
+        <button className="relative font-[Inter] text-[0.875rem] font-semibold leading-[1.25rem] text-center shadow-[0px_0.0625rem_0.125rem_0px_#0000001D] w-[8.5625rem] h-[2.75rem] px-[1.125rem] py-[0.9375rem] gap-[0.5rem] rounded-[1rem]">
+          Learn more
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-[2rem] h-[2rem] absolute top-[0.5rem] right-[0]" viewBox="0 0 20 20">
+            <polygon points="10,5 13,8 7,8" fill="#000" transform="rotate(45 9 8)" />
+            <rect x="9" y="8" width="1" height="8" fill="#000" transform="rotate(45 9 8)" />
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
   
-  )
-}
+    {/* Image and Info */}
+    <div className="relative w-full sm:w-[22.5625rem] md:w-[36.6875rem] sm:h-[20.878rem] md:h-auto gap-0 sm:gap-0 z-[-1]">
+      <div className="w-auto h-auto gap-[0.625rem]">
+        <div className="absolute bg-[#fff] flex top-[7.24rem] left-[-2rem] w-[7.125rem] h-[2.5625rem] gap-[0.625rem] rounded-[1.6875rem] border-b border-transparent shadow-[0px_0px_1.08125rem_-0.1875rem_rgba(0,0,0,0.36)]">
+          <div className="w-[3.0625rem] h-[2.5625rem] p-[0.75rem] [padding-left:0.875rem] [padding-right:0.875rem] gap-[0.625rem] rounded-[9.9375rem] bg-[#D9E5FB] flex items-center justify-center">
+            <span className="font-[Inter] text-[0.75rem] font-medium leading-[1.0875rem] text-[#417BEB]">
+              1K+
+            </span>
+          </div>
+          <span className="font-[Inter] text-[0.75rem] font-medium leading-[1.0875rem] text-[#323232] text-center">
+            12K patients
+          </span>
+        </div>
+      </div>
+      <img src={HeroImg} className="w-full h-full object-cover" alt="physicians" />
+      <div className="w-auto h-auto gap-[0.625rem]">
+        <div className="absolute bg-[#fff] flex items-center top-[27.24rem] right-[-2rem] w-[7.125rem] h-[2.5625rem] gap-[0.625rem] rounded-[1.6875rem] border-b border-transparent shadow-[0px_0px_1.08125rem_-0.1875rem_rgba(0,0,0,0.36)]">
+          <div className="w-[3.0625rem] h-[2.5625rem] p-[0.75rem] [padding-left:0.875rem] [padding-right:0.875rem] gap-[0.625rem] rounded-[9.9375rem] bg-[#D9E5FB] flex items-center justify-center">
+            <span className="font-[Inter] text-[0.75rem] font-medium leading-[1.0875rem] text-[#417BEB]">
+              1K+
+            </span>
+          </div>
+          <span className="font-[Inter] text-[0.75rem] font-medium leading-[1.0875rem] text-[#323232] text-center">
+            Doctors
+          </span>
+        </div>
+      </div>
+    </div>
+  
+    {/* Vector Image */}
+    <div className="w-[12.667rem] absolute top-[35.5rem] left-[0.0275rem] p-[3.3275rem] [padding-left:0] [padding-right:1.3931rem] [padding-bottom:3.3681rem] z-[-1]">
+      <img src={HomeVector} alt="Vector" />
+    </div>
+  </section>  
+  );
+};
 
-export default Hero
+export default Hero;

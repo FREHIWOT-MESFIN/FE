@@ -54,12 +54,8 @@ const SignUpOTP = () => {
     };
 
     return (
-        <div className="bg-gray-50 flex flex-col justify-center items-center py-20 px-4 sm:px-12 lg:px-16 min-h-screen min-w-screen">
-            <div className="w-full max-w-[1296px] h-[550px] mt-[3rem] mx-auto flex flex-col justify-center items-center rounded-tl-[24px] rounded-tr-none rounded-bl-none shadow-lg overflow-hidden bg-white p-8">
-                <div className="flex w-full justify-center mb-8 mt-[-10rem] gap-1">
-                    <img src={PhHeartbeat} alt="E-MEDATT Logo" className="w-[35px] h-[35px] font-inter"/>
-                    <h1 className='font-inter text-4xl font-bold leading-8 text-[#3b54fa] ml-2'>E-MEDATT</h1>
-                </div>
+        <div className="bg-gray-50 flex flex-col justify-center items-center">
+            <div className="flex flex-col justify-center items-center p-8">
                 <h2 className="text-[20px] font-inter font-semibold leading-9 text-center text-[#222222] mt-19">Check your email</h2>
                 <p className="mt-3 font-normal font-inter text-lg leading-6 text-center text-[#222222]"> We sent an OTP to your mail</p>
 
@@ -89,22 +85,6 @@ const SignUpOTP = () => {
                 </form>
                 {error && <p className="text-red-500 mt-2">{error}</p>}
             </div>
-            <footer className="w-[1200px] h-[19px] gap-[384px] lg:flex justify-center items-center text-center text-gray-500 mt-10">
-                <div className='w-[159px] h-[19px]'>
-                    <p className='font-Inter text-[#141522] text-xs leading-[14.52px] tracking-[-1%] text-nowrap'>Copyright © Emedatt 2024</p>
-                </div>
-
-                <div className="flex item-center w-[155px] h-[19px] gap-[18px]">
-                    <a className='font-normal text-[16.85px] leading-[19.38px] text-[#222222]' href="https://facebook.com/example" target="_blank " rel='noopener noreferrer'> <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faFacebook} /></a>
-                    <a className='font-normal text-[16.85px] leading-[19.38px] text-[#222222]' href="https://twitter.com" target="_blank " rel='noopener noreferrer'> <FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faTwitter} /></a>
-                    <a className='font-normal text-[16.85px] leading-[19.38px] text-[#222222]' href="https://instagram.com" target="_blank " rel='noopener noreferrer'><FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faInstagram} /></a>
-                    <a className='font-normal text-[16.85px] leading-[19.38px] text-[#222222]' href="https://youtube.com" target="_blank " rel='noopener noreferrer'><FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faYoutube} /></a>
-                    <a className='font-normal text-[16.85px] leading-[19.38px] text-[#222222]' href="https://linkedin.com" target="_blank " rel='noopener noreferrer'><FontAwesomeIcon style={{ fontSize: '16.85px' }} icon={faLinkedin} /></a>
-                </div>
-                <div className='w-[117px] h-[11px]'>
-                    <p className="tracking-[-1%] text-[#263238] font-normal text-[12px] leading-[14.52px]">Terms and condition</p>
-                </div>
-            </footer>
         </div>
     );
 };
