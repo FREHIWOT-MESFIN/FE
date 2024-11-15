@@ -8,13 +8,13 @@ import foreveryone6 from '../../assets/foreveryone6.png';
 
 const Mission = () => {
   return (
-    <section className='w-full h-auto gap-[10px] py-8'>
-    <div className='w-full max-w-[1312px] h-auto flex flex-col lg:justify-between items-center mx-auto px-4 lg:px-0'>
-      <div className='mb-8 w-[766px] flex flex-col justify-center items-center'>
-        <h2 className='font-[Inter] text-[36px] leading-[43.2px] text-[#000] text-4xl font-bold'>
-          Healthcare for <span className="font-[Inter] text-[#417BEB] text-[36px] font-bold leading-[43.2px]"> Everyone</span>,<span className="font-[Inter] text-[#417BEB] text-[36px] font-bold leading-[43.2px]"> Wherever</span> You Are
+    <section className='w-full py-8'>
+    <div className='w-full max-w-[1312px] flex flex-col lg:justify-between items-center mx-auto px-4 lg:px-0'>
+      <div className='mb-8 mt-11 w-[21rem] md:w-[766px] flex flex-col justify-center items-center'>
+        <h2 className='font-[Inter] text-[25px] md:text-[36px] leading-[25px] md:leading-[43.2px] text-[#000] text-4xl font-bold'>
+          Healthcare for <span className="font-[Inter] text-[#417BEB] text-[25px] md:text-[36px] font-bold leading-[25px] md:leading-[43.2px]"> Everyone</span>,<span className="font-[Inter] text-[#417BEB] text-[25px] md:text-[36px] font-bold leading-[25px] md:leading-[43.2px]"> Wherever</span> You Are
         </h2>
-        <p className='font-[Inter] w-[460px] text-[16px] font-normal leading-[23.2px] text-[#969696]'>
+        <p className='font-[Inter] w-[460px] text-[14px] md:text-[16px] font-normal leading-[23.2px] text-[#969696] text-center mt-1'>
           E-MEDATT makes healthcare accessible for different groups, providing tailored care to meet your specific needs.
         </p>
       </div>

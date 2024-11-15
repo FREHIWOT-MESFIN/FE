@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthPage from './components/LoginPage/AuthPage';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import LandingPage from './components/LandingPage/LandingPage';
 import OTP from './components/OTPPage/OTP';
@@ -16,9 +16,6 @@ const App = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/auth/:type" element={<AuthPage />} />
-      <Route path="/Signup" element={<SignUp />} />
-      <Route path="/ForgotPassword" element={<ForgotPassword />} />
-      <Route path='/OTP' element={<OTP />} />
       <Route path='/Profile' element={<Profile />} />
       <Route path="/about" element={<About />} />
       <Route path="/pricing" element={<Pricing />} />
