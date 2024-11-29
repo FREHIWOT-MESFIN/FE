@@ -6,7 +6,7 @@ import LinkArrow from "../../assets/LinkArrow.png";
 const Features = () => {
   return (
   <section className='w-full h-full bg-white flex flex-col items-center'>
-    <div className='w-full lg:w-[1232px] h-auto gap-4 lg:gap-8 flex flex-col md:flex-row items-center mt-16 p-5'>
+    <div className='w-full lg:w-[1232px] h-auto gap-4 lg:gap-8 flex flex-col lg:flex-row items-center mt-16 p-5'>
       <div>
         <img src={FeatureImage} alt="" className='w-[679px] h-[532px]'/>
       </div>

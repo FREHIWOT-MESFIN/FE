@@ -4,13 +4,13 @@ import HomeVector from '../../assets/HomeVector.png';
 
 const Hero = () => {
   return (
-    <section className="w-full h-[100vh] flex flex-col md:flex-row items-center justify-center mt-[10rem] md:mt-[0.5625rem] gap-[4.25rem]">
+    <section className="w-full h-[100vh] flex flex-col lg:flex-row items-center justify-center mt-[10rem] md:mt-[15rem] lg:mt-[0.5625rem] gap-[4.25rem]">
     {/* Main Content Section */}
-    <div className="w-[25rem] md:w-[33.75rem] h-auto gap-[1.5rem]">
+    <div className="w-[25rem] md:[30rem] lg:w-[33.75rem] h-auto gap-[1.5rem]">
      {/* Heading */}
       <h1 className="font-[Inter] lg:text-[3rem] md:text-[2rem] text-[1.75rem] text-[#000] font-bold leading-[1.75rem] md:leading-[4.375rem] md:text-center lg:mr-[-0.9rem] sm:mr-0">
         Your Path to
-        <span className="font-[Inter] text-[#417BEB] text-[1.75rem] md:text-[3.5rem] font-bold leading-[3.814rem] mx-2">
+        <span className="font-[Inter] text-[#417BEB] text-[1.75rem] md:text-[2.7rem] lg:text-[3.5rem] font-bold leading-[3.814rem] mx-2">
           Better Health
         </span>
         is Just One Click Away!

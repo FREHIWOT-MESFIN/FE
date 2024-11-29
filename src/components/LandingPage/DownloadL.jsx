@@ -11,7 +11,7 @@ function DownloadL() {
   return (
     <div className="relative top-[8rem] flex justify-center items-center z-20">
       <div
-        className="w-[26rem] h-[23rem] md:w-[70rem] md:h-[38.71rem] bg-[#417BEB] p-5 md:p-[7.125rem] gap-[0.625rem] rounded-[0.75rem] flex justify-center items-center"
+        className="w-[26rem] h-[23rem] sm:w-[30rem]  md:w-[50rem] lg:w-[70rem] md:h-[38.71rem] bg-[#417BEB] p-5 lg:p-[7.125rem] gap-[0.625rem] rounded-[0.75rem] flex justify-center items-center"
         style={{
           backgroundImage: `url(${leftCell}), url(${rightCell})`,
           backgroundPosition: 'left center, right center',
@@ -19,7 +19,7 @@ function DownloadL() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        <div className="w-[329px]"> {/* Ensure content is on top of background */}
+        <div className="w-[329px] lg:w-[696px]"> {/* Ensure content is on top of background */}
           {/* Text with Highlight Image */}
           <div className="relative m-1 md:m-10">
             <p className="text-white text-base md:text-lg">

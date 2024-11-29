@@ -20,7 +20,7 @@ const Mission = () => {
       </div>
 
 
-      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 lg:grid-cols-3 gap-4'>
          
           <div className="w-[23.625rem] h-[20.75rem] p-0 pb-[2.5rem] gap-[0.625rem] rounded-[0.5rem] border-[0.0625rem] border-solid border-gray-300 shadow-sm bg-white">
             <div className="relative w-[23.625rem] h-[6.1875rem] gap-0 rounded-tl-[0.5rem] rounded-tr-[0.5rem] bg-[#DBEFDC]">

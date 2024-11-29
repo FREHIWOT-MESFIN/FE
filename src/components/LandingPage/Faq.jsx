@@ -15,7 +15,7 @@ function Faq() {
 
   return (
     <div className='w-full flex flex-col md:flex-row justify-between'>
-      <div className='w-[32.625rem] h-[33.4375rem] p-[8.9375rem] pr-[3.9375rem] pb-[10.875rem] pl-[6.5rem] gap-[0.625rem] bg-[#417BEB] flex flex-col justify-center'>
+      <div className='w-full h-[280px] md:w-[32.625rem] md:h-[33.4375rem] p-[8.9375rem] pr-[3.9375rem] pb-[10.875rem] pl-[6.5rem] gap-[0.625rem] bg-[#417BEB] flex flex-col justify-center'>
         <h2 className='font-inter text-[#fff] text-[2.25rem] font-extrabold leading-[2.5rem] text-left'>
           FAQs
         </h2>
