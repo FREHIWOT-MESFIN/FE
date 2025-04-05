@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*, *::after, *::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Ensure all items have relative positioning */
 .grid-item {
   position: relative;
@@ -42,12 +49,12 @@
 .grid-container .grid-item:nth-child(1)::before {
   content: "01"; /* Manually set for first item */
 }
-.grid-container .grid-item:nth-child(3)::before {
+.grid-container .grid-item:nth-child(4)::before {
   content: "02"; /* Manually set for second item */
 }
-.grid-container .grid-item:nth-child(5)::before {
+.grid-container .grid-item:nth-child(6)::before {
   content: "03"; /* Manually set for third item */
 }
-.grid-container .grid-item:nth-child(7)::before {
+.grid-container .grid-item:nth-child(9)::before {
   content: "04"; /* Manually set for fourth item */
 }

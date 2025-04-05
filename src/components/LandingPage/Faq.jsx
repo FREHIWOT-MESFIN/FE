@@ -14,8 +14,8 @@ function Faq() {
   };
 
   return (
-    <div className='w-full flex flex-col md:flex-row justify-between'>
-      <div className='w-full h-[280px] md:w-[32.625rem] md:h-[33.4375rem] p-[8.9375rem] pr-[3.9375rem] pb-[10.875rem] pl-[6.5rem] gap-[0.625rem] bg-[#417BEB] flex flex-col justify-center'>
+    <div className='w-full flex flex-col lg:flex-row justify-between'>
+      <div className='w-full h-[280px] lg:w-[32.625rem] lg:h-[33.4375rem] p-[8.9375rem] pr-[3.9375rem] pb-[10.875rem] pl-[6.5rem] gap-[0.625rem] bg-[#417BEB] flex flex-col justify-center'>
         <h2 className='font-inter text-[#fff] text-[2.25rem] font-extrabold leading-[2.5rem] text-left'>
           FAQs
         </h2>
@@ -29,16 +29,18 @@ function Faq() {
           <img src={LinkArrow} alt="" />
         </button>
       </div>
-      <div className='flex-1 flex flex-col justify-center items-center w-full md:w-[36.5rem] h-[33.4375rem] p-3 md:p-[4rem] gap-[1.5rem]'>
+      <div className='flex-1 flex flex-col justify-center items-center w-full lg:w-[36.5rem] h-[33.4375rem] p-3 lg:p-[4rem] gap-[1.5rem]'>
         {/* FAQ Item 1 */}
-        <div className="w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border border-[#DCDCDC] bg-white">
+        <div className={`w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border ${activeFaq === 0 ? "border-[#323232]" : "border-[#DCDCDC]"} cursor-pointer bg-white`}
+        onClick={() => handleFaq(0)}
+        >
           <div className='flex justify-between'>
             <p className="font-inter text-[1rem] font-semibold leading-[1.45rem] text-left text-[#323232]">
               How do I schedule an appointment?
             </p>
             <img
               src={activeFaq === 0 ? close : more}  // Toggle between 'more' and 'close' based on FAQ state
-              onClick={() => handleFaq(0)}
+              
               className='w-[16px] h-[16px] cursor-pointer'
               alt={activeFaq === 0 ? "close" : "expand"}
             />
@@ -53,14 +55,16 @@ function Faq() {
         </div>
 
         {/* FAQ Item 2 */}
-        <div className="w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border border-[#DCDCDC] bg-white">
+        <div className={`w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border ${activeFaq === 1 ? "border-[#323232]" : "border-[#DCDCDC]"} cursor-pointer bg-white`}
+        onClick={() => handleFaq(1)}
+        >
           <div className='flex justify-between'>
             <p className="font-inter text-[1rem] font-semibold leading-[1.45rem] text-left text-[#323232]">
               What types of consultations are available?
             </p>
             <img
               src={activeFaq === 1 ? close : more}  // Toggle between 'more' and 'close' based on FAQ state
-              onClick={() => handleFaq(1)}
+              
               className='w-[16px] h-[16px] cursor-pointer'
               alt={activeFaq === 1 ? "close" : "expand"}
             />
@@ -75,14 +79,15 @@ function Faq() {
         </div>
 
         {/* FAQ Item 3 */}
-        <div className="w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border border-[#DCDCDC] bg-white">
+        <div className={`cursor-pointer w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border ${activeFaq === 2 ? "border-[#323232]" : "border-[#DCDCDC]"} bg-white`} 
+        onClick={() => handleFaq(2)}
+        >
           <div className='flex justify-between'>
             <p className="font-inter text-[1rem] font-semibold leading-[1.45rem] text-left text-[#323232]">
               Is the consultation secure and private?
             </p>
             <img
               src={activeFaq === 2 ? close : more}  // Toggle between 'more' and 'close' based on FAQ state
-              onClick={() => handleFaq(2)}
               className='w-[16px] h-[16px] cursor-pointer'
               alt={activeFaq === 2 ? "close" : "expand"}
             />
@@ -97,14 +102,16 @@ function Faq() {
         </div>
 
         {/* FAQ Item 4 */}
-        <div className="w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border border-[#DCDCDC] bg-white">
+        <div className={`w-[360px] md:w-[584px] p-[20px] pl-[24px] gap-[10px] rounded-[12px] border ${activeFaq === 3 ? "border-[#323232]" : "border-[#DCDCDC]"}  cursor-pointer bg-white`}
+        onClick={() => handleFaq(3)}
+        >
           <div className='flex justify-between'>
             <p className="font-inter text-[1rem] font-semibold leading-[1.45rem] text-left text-[#323232]">
               Can I change or cancel my appointment?
             </p>
             <img
               src={activeFaq === 3 ? close : more}  // Toggle between 'more' and 'close' based on FAQ state
-              onClick={() => handleFaq(3)}
+              
               className='w-[16px] h-[16px] cursor-pointer'
               alt={activeFaq === 3 ? "close" : "expand"}
             />

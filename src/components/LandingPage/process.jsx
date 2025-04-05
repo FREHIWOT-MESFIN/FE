@@ -22,14 +22,15 @@ const Process = () => {
            Follow these easy steps to enjoy quick and seamless access to certified doctors on E-Medatt.
           </p>
        </div>
-       <div className="mt-8 grid grid-cols-3 lg:grid-cols-4 grid-rows-4 grid-container w-full justify-center items-center lg:w-[1232px] lg:h-[604.88px]">
+       <div className="mt-8 grid grid-cols-3 lg:grid-cols-4 grid-rows-4 grid-container w-full justify-center items-center p-8">
+        {/**lg:w-[1232px] lg:h-[604.88px] */}
           {/* First Step */}
           <div className="col-start-2 lg:col-start-1 lg:row-start-1 grid-item w-[22rem] mt-6 md:mt-0 text-center">
             <div className="w-[44px] h-[46.88px] flex justify-center items-center pt-[11.44px] px-0 gap-[4.4px] rounded-[5.28px] bg-[#D9E5FB]">
               <img src={stepone} alt="Bullet icon" />
             </div>
             <h1 className="font-[Inter] text-[24px] font-semibold leading-[28.8px] text-left text-[#323232]">Register or Log In</h1>
-            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696]">
+            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696] w-[16rem]">
               Sign up for a new account or log in to access personalized healthcare services. It's quick and easy.
             </p>
           </div>
@@ -49,7 +50,7 @@ const Process = () => {
               <img src={steptwo} alt="Bullet icon" />
             </div>
             <h1 className="font-[Inter] text-[24px] font-semibold leading-[28.8px] text-left text-[#323232]">Choose a Doctor</h1>
-            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696]">
+            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696] w-[16rem]">
             Select the service that suits your needs, from virtual consultations to specialist appointments. We offer a range of options for you.
             </p>
           {/* for small screen */}
@@ -70,7 +71,7 @@ const Process = () => {
               <img src={stepthree} alt="Bullet icon" />
             </div>
             <h1 className="font-[Inter] text-[24px] font-semibold leading-[28.8px] text-left text-[#323232]">Book an Appointment</h1>
-            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696]">
+            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696] w-[16rem]">
             Connect instantly with a licensed doctor through secure video calls. Get expert advice and treatment from the comfort of your home.
             </p>
           </div>
@@ -90,7 +91,7 @@ const Process = () => {
               <img src={stepfour} alt="Bullet icon" />
             </div>
             <h1 className="font-[Inter] text-[24px] font-semibold leading-[28.8px] text-left text-[#323232]">Manage Records</h1>
-            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696]">
+            <p className="text-[16px] font-medium leading-[23.2px] text-left text-[#969696] w-[16rem]">
             Easily access your medical records anytime and schedule follow-ups as needed. Stay organized and in control of your health journey.
             </p>
           </div>
